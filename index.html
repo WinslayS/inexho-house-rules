@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="House rules and tenant guidelines for International Expats Houses."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.webp" />
+    <link rel="apple-touch-icon" href="assets/favicon.webp" />
+    <title>House Rules | International Expats Houses</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <img
+          class="logo"
+          src="assets/logo.webp"
+          alt="International Expats Houses logo"
+        />
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Tenant information</p>
+          <h1 data-i18n="title">House Rules</h1>
+          <p data-i18n="intro">
+            Please follow these rules to keep the accommodation safe, clean and
+            comfortable for all residents.
+          </p>
+        </div>
+      </header>
+
+      <section class="language-panel" aria-label="Language selector">
+        <div>
+          <span class="label" data-i18n="languageLabel"
+            >Choose your language</span
+          >
+          <p class="small" data-i18n="languageHint">
+            Your choice will be saved on this device.
+          </p>
+        </div>
+        <div class="language-buttons" id="languageButtons"></div>
+      </section>
+
+      <section class="notice snf-card">
+        <div class="notice-icon">✓</div>
+        <div>
+          <h2 data-i18n="snfTitle">SNF housing standards</h2>
+          <p data-i18n="snfText">
+            International Expats Houses manages its accommodations according to
+            SNF housing standards where applicable. Residents are expected to
+            follow these house rules to keep the accommodation safe, clean and
+            suitable for everyone.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 data-i18n="quickTitle">Main rules</h2>
+        <div class="icon-grid" id="quickRules"></div>
+      </section>
+
+      <section class="section card-section">
+        <h2 data-i18n="generalTitle">General house rules</h2>
+        <div class="rule-groups" id="ruleGroups"></div>
+      </section>
+
+      <section class="section card-section">
+        <h2 data-i18n="wasteTitle">Waste sorting</h2>
+        <p class="section-intro" data-i18n="wasteIntro">
+          Waste must be separated correctly and placed only in the correct
+          containers.
+        </p>
+        <div class="waste-grid" id="wasteItems"></div>
+        <p class="warning" data-i18n="wasteWarning">
+          Leaving garbage, furniture or waste outside the property is strictly
+          prohibited.
+        </p>
+      </section>
+
+      <section class="section card-section">
+        <h2 data-i18n="fineTitle">Fine policy</h2>
+        <p class="section-intro" data-i18n="fineIntro">
+          Failure to comply with the house rules may result in warnings,
+          financial penalties or termination of the rental agreement.
+        </p>
+        <div class="fine-grid" id="fineItems"></div>
+      </section>
+
+      <section class="section card-section emergency-section">
+        <h2 data-i18n="emergencyTitle">Emergency procedures</h2>
+        <div class="emergency-number">
+          <span>112</span>
+          <p data-i18n="emergencyCall">
+            In life-threatening situations, call 112 immediately.
+          </p>
+        </div>
+        <div class="emergency-grid" id="emergencyItems"></div>
+      </section>
+
+      <footer class="footer contact-footer">
+        <div class="footer-brand">
+          <img src="assets/logo.webp" alt="International Expats Houses logo" />
+          <div>
+            <strong>International Expats Houses</strong>
+            <span data-i18n="footerText"
+              >For questions or problems, contact the company directly.</span
+            >
+          </div>
+        </div>
+        <div class="contact-grid" aria-label="Company contact details">
+          <button
+            class="contact-item copy-contact"
+            type="button"
+            data-copy="info@inexho.com"
+          >
+            <span class="contact-icon">✉</span>
+            <small data-i18n="emailLabel">Email</small>
+            <b>info@inexho.com</b>
+          </button>
+          <button
+            class="contact-item copy-contact"
+            type="button"
+            data-copy="+31 6 1539 7067"
+          >
+            <span class="contact-icon">☎</span>
+            <small data-i18n="phoneLabel">Phone</small>
+            <b>+31 6 1539 7067</b>
+          </button>
+          <button
+            class="contact-item copy-contact"
+            type="button"
+            data-copy="Diamantweg 68, 1812 RC Alkmaar"
+          >
+            <span class="contact-icon">⌂</span>
+            <small data-i18n="addressLabel">Office address</small>
+            <b>Diamantweg 68<br />1812 RC Alkmaar</b>
+          </button>
+        </div>
+      </footer>
+    </main>
+
+    <div class="copy-toast" id="copyToast" role="status" aria-live="polite">
+      Copied
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
