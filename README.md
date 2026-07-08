@@ -1,27 +1,70 @@
 # International Expats Houses — House Rules Website
 
-Static lightweight website for Vercel.
+Simple website with multilingual house rules and a printable A4 poster.
 
-## Files
+## Website
 
-- `index.html` — public website opened by QR code
-- `style.css` — company-style design based on blue logo
-- `script.js` — renders language buttons and saves language in browser localStorage
-- `translations.js` — all language text in one file
-- `poster.html` — printable A4 poster with QR placeholder
-- `assets/logo.jpeg` — company logo
+**House Rules**
+https://inexho-house-rules.vercel.app
 
-## Languages
+**Printable Poster**
+https://inexho-house-rules.vercel.app/poster.html
 
-English, Polski, Română, Українська, Lietuvių, Slovenčina, Български, Magyar.
+---
 
-## Deploy to Vercel
+## Available languages
 
-1. Upload this folder to a GitHub repository.
-2. Connect the repository to Vercel.
-3. Use default settings. No build command is needed.
-4. After deployment, create a QR code from the Vercel URL and place it into `poster.html`.
+The website currently supports:
 
-## Important
+- 🇬🇧 English
+- 🇵🇱 Polski
+- 🇷🇴 Română
+- 🇺🇦 Українська
+- 🇱🇹 Lietuvių
+- 🇸🇰 Slovenčina
+- 🇧🇬 Български
+- 🇭🇺 Magyar
 
-The translations are a working draft. Before printing or using legally, ask a native speaker / manager to check the final wording.
+The selected language is automatically saved on the current device.
+
+---
+
+## Printing
+
+The website is optimized for printing.
+
+1. Open the House Rules website.
+2. Select the required language.
+3. Press **Ctrl + P** (Windows/Linux) or **⌘ + P** (Mac).
+4. Print or save as PDF.
+
+The printed document will automatically use the selected language.
+
+---
+
+## Poster
+
+The printable poster contains:
+
+- QR code linking to the full House Rules website
+- Company branding
+- Main house rules
+- Print button in the bottom-right corner for easy printing
+
+---
+
+## Updating the website
+
+After making changes:
+
+1. Save the files.
+2. Push the changes to GitHub.
+3. Vercel will automatically publish the new version.
+
+The website address and QR code remain the same, so printed posters do not need to be replaced.
+
+---
+
+## Note
+
+Translations are intended as a practical guide. If the website will be used as an official or legal document, it is recommended to have the final translations reviewed by a native speaker.

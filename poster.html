@@ -69,6 +69,12 @@
         font-size: 11.8px;
         line-height: 1.35;
       }
+      .qr-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 3mm;
+      }
       .snf {
         margin: 2.5mm auto 0;
         display: inline-flex;
@@ -380,7 +386,9 @@
       </section>
 
       <section class="qr-section" aria-label="QR code and languages">
-        <div class="qr-box">PLACE<br />QR CODE<br />HERE</div>
+        <div class="qr-box">
+          <img src="assets/qr-code.svg" alt="QR code" class="qr-image" />
+        </div>
         <div class="scan">
           <h2 class="scan-title">Scan to read the full house rules</h2>
           <p class="scan-text">
