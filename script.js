@@ -1,5 +1,7 @@
 const LANGUAGE_META = [
   ["en", "🇬🇧 English"],
+  ["nl", "🇳🇱 Nederlands"],
+  ["de", "🇩🇪 Deutsch"],
   ["pl", "🇵🇱 Polski"],
   ["ro", "🇷🇴 Română"],
   ["uk", "🇺🇦 Українська"],

@@ -501,6 +501,240 @@ const TRANSLATIONS = {
       },
     ],
   },
+  nl: {
+  ...BASE.en,
+  eyebrow: "Informatie voor bewoners",
+  title: "Huisregels",
+  intro:
+    "Volg deze regels om de accommodatie veilig, schoon en comfortabel te houden voor alle bewoners.",
+  languageLabel: "Kies uw taal",
+  languageHint: "Uw keuze wordt op dit apparaat opgeslagen.",
+  snfTitle: "SNF-huisvestingsnormen",
+  snfText:
+    "International Expats Houses beheert haar accommodaties, waar van toepassing, volgens de SNF-huisvestingsnormen. Van bewoners wordt verwacht dat zij deze huisregels naleven, zodat de accommodatie veilig, schoon en geschikt blijft voor iedereen.",
+  quickTitle: "Belangrijkste regels",
+  generalTitle: "Algemene huisregels",
+  wasteTitle: "Afval scheiden",
+  wasteIntro:
+    "Afval moet correct worden gescheiden en uitsluitend in de daarvoor bestemde containers worden geplaatst.",
+  wasteWarning:
+    "Het is ten strengste verboden om afval, meubels of andere zaken buiten de accommodatie achter te laten.",
+  fineTitle: "Boetebeleid",
+  fineIntro:
+    "Het niet naleven van de huisregels kan leiden tot waarschuwingen, financiële sancties of beëindiging van de huurovereenkomst.",
+  emergencyTitle: "Noodprocedures",
+  emergencyCall: "Bel bij levensgevaar onmiddellijk 112.",
+  footerText:
+    "Neem bij vragen of problemen rechtstreeks contact op met het bedrijf. Klik op een contactgegeven om het te kopiëren.",
+  emailLabel: "E-mail",
+  phoneLabel: "Telefoon",
+  addressLabel: "Kantooradres",
+  copiedText: "Gekopieerd",
+  quickRules: [
+    { title: "Niet roken", text: "Roken in de accommodatie is ten strengste verboden." },
+    { title: "Nachtrust", text: "Elke dag van 22:00 tot 07:00." },
+    { title: "Geen drugs", text: "Gebruik of bezit is verboden." },
+    { title: "Respecteer anderen", text: "Respecteer medebewoners en buren." },
+    { title: "Houd het schoon", text: "Houd de accommodatie schoon en hygiënisch." },
+    { title: "Geen reparaties", text: "Pas niets aan en voer geen reparaties uit zonder toestemming." },
+    { title: "Raak melders niet aan", text: "Veiligheidsvoorzieningen moeten op hun plaats blijven." },
+    { title: "Alleen toegestaan parkeren", text: "Parkeer uitsluitend waar dit is toegestaan." },
+  ],
+  groups: [
+    {
+      title: "Respect en veiligheid",
+      items: [
+        "Roken in de accommodatie is ten strengste verboden.",
+        "Het gebruiken of bezitten van drugs is ten strengste verboden.",
+        "Wapens, explosieven en gevaarlijke materialen zijn niet toegestaan.",
+        "Respecteer te allen tijde andere bewoners en omwonenden.",
+      ],
+    },
+    {
+      title: "Geluid en nachtrust",
+      items: [
+        "De nachtrust geldt dagelijks van 22:00 tot 07:00.",
+        "Overmatig lawaai, harde muziek en andere overlast zijn niet toegestaan.",
+      ],
+    },
+    {
+      title: "Zorg voor de accommodatie",
+      items: [
+        "Houd de accommodatie schoon, hygiënisch en in goede staat.",
+        "Voer zonder toestemming geen onderhoud, reparaties of wijzigingen uit.",
+        "Rookmelders en andere veiligheidsvoorzieningen mogen niet worden verwijderd, afgedekt of aangeraakt.",
+        "Gebruik huishoudelijke apparaten zorgvuldig en meld problemen bij de beheerder.",
+        "Schakel bij vertrek de verwarming uit wanneer deze niet nodig is en sluit alle ramen en deuren.",
+      ],
+    },
+    {
+      title: "Parkeren en persoonlijke eigendommen",
+      items: [
+        "Voertuigen mogen alleen op aangewezen of toegestane plaatsen worden geparkeerd.",
+        "International Expats Houses is niet aansprakelijk voor diefstal, verlies of beschadiging van persoonlijke eigendommen.",
+        "De accommodatie moet bij vertrek schoon en netjes worden achtergelaten.",
+        "Alle sleutels moeten bij het uitchecken worden ingeleverd.",
+      ],
+    },
+  ],
+  waste: [
+    { title: "Plastic", text: "Alleen plastic afval" },
+    { title: "Gft", text: "Alleen groente-, fruit-, tuin- en organisch afval" },
+    { title: "Papier", text: "Papier en karton" },
+    { title: "Restafval", text: "Alleen restafval" },
+  ],
+  fines: [
+    { title: "Binnen roken", text: "Eerste overtreding: waarschuwing", penalty: "Tweede overtreding: €150,00" },
+    { title: "Betaling 7 dagen te laat", text: "Extra kosten", penalty: "5% van het huurbedrag" },
+    { title: "Betaling 14 dagen te laat", text: "Extra kosten", penalty: "10% van het huurbedrag" },
+    { title: "Afval buiten", text: "Eerste overtreding: waarschuwing", penalty: "Tweede overtreding: €150,00" },
+    { title: "Extra schoonmaak of afvalverwijdering", text: "Wanneer extra werkzaamheden nodig zijn", penalty: "€300,00" },
+    { title: "Verloren sleutels", text: "Per ontbrekende sleutel", penalty: "€25,00" },
+  ],
+  emergency: [
+    {
+      title: "Bij gevaar",
+      items: [
+        "Blijf kalm en beoordeel de situatie.",
+        "Bel indien nodig onmiddellijk 112.",
+        "Noem uw naam en adres en beschrijf het gevaar.",
+      ],
+    },
+    {
+      title: "Bij een ongeval",
+      items: [
+        "Blijf kalm en help het slachtoffer indien mogelijk.",
+        "Bel 0900-8844 of bij levensgevaar 112.",
+        "Geef uw locatie en het soort letsel door.",
+      ],
+    },
+    {
+      title: "Bij brand",
+      items: [
+        "Blus alleen een kleine brand wanneer dit veilig kan.",
+        "Bel 112 en geef de locatie van de brand door.",
+        "Verlaat het gebouw onmiddellijk en gebruik geen lift.",
+      ],
+    },
+  ],
+},
+  de: {
+  ...BASE.en,
+  eyebrow: "Informationen für Bewohner",
+  title: "Hausordnung",
+  intro:
+    "Bitte beachten Sie diese Regeln, damit die Unterkunft für alle Bewohner sicher, sauber und angenehm bleibt.",
+  languageLabel: "Sprache auswählen",
+  languageHint: "Ihre Auswahl wird auf diesem Gerät gespeichert.",
+  snfTitle: "SNF-Unterkunftsstandards",
+  snfText:
+    "International Expats Houses verwaltet seine Unterkünfte, soweit anwendbar, gemäß den SNF-Unterkunftsstandards. Von allen Bewohnern wird erwartet, dass sie diese Hausordnung einhalten, damit die Unterkunft sicher, sauber und für alle geeignet bleibt.",
+  quickTitle: "Wichtigste Regeln",
+  generalTitle: "Allgemeine Hausordnung",
+  wasteTitle: "Mülltrennung",
+  wasteIntro:
+    "Abfälle müssen korrekt getrennt und ausschließlich in den dafür vorgesehenen Behältern entsorgt werden.",
+  wasteWarning:
+    "Es ist strengstens verboten, Müll, Möbel oder andere Abfälle außerhalb der Unterkunft abzustellen.",
+  fineTitle: "Bußgeldregelung",
+  fineIntro:
+    "Verstöße gegen die Hausordnung können zu Verwarnungen, Geldstrafen oder zur Beendigung des Mietverhältnisses führen.",
+  emergencyTitle: "Verhalten im Notfall",
+  emergencyCall: "Rufen Sie in lebensbedrohlichen Situationen sofort die 112 an.",
+  footerText:
+    "Wenden Sie sich bei Fragen oder Problemen direkt an das Unternehmen. Klicken Sie auf eine Kontaktangabe, um sie zu kopieren.",
+  emailLabel: "E-Mail",
+  phoneLabel: "Telefon",
+  addressLabel: "Büroanschrift",
+  copiedText: "Kopiert",
+  quickRules: [
+    { title: "Rauchen verboten", text: "Das Rauchen in der Unterkunft ist strengstens verboten." },
+    { title: "Nachtruhe", text: "Täglich von 22:00 bis 07:00 Uhr." },
+    { title: "Keine Drogen", text: "Konsum und Besitz sind verboten." },
+    { title: "Andere respektieren", text: "Respektieren Sie Mitbewohner und Nachbarn." },
+    { title: "Sauber halten", text: "Halten Sie die Unterkunft sauber und hygienisch." },
+    { title: "Keine Reparaturen", text: "Nehmen Sie ohne Erlaubnis keine Änderungen oder Reparaturen vor." },
+    { title: "Melder nicht berühren", text: "Sicherheitseinrichtungen müssen an ihrem Platz bleiben." },
+    { title: "Nur erlaubt parken", text: "Parken Sie ausschließlich dort, wo es erlaubt ist." },
+  ],
+  groups: [
+    {
+      title: "Respekt und Sicherheit",
+      items: [
+        "Das Rauchen in der Unterkunft ist strengstens verboten.",
+        "Der Konsum oder Besitz von Drogen ist strengstens verboten.",
+        "Waffen, Sprengstoffe und gefährliche Materialien sind nicht erlaubt.",
+        "Respektieren Sie jederzeit andere Bewohner und die Nachbarschaft.",
+      ],
+    },
+    {
+      title: "Lärm und Nachtruhe",
+      items: [
+        "Die Nachtruhe gilt täglich von 22:00 bis 07:00 Uhr.",
+        "Übermäßiger Lärm, laute Musik und andere Störungen sind nicht gestattet.",
+      ],
+    },
+    {
+      title: "Umgang mit der Unterkunft",
+      items: [
+        "Halten Sie die Unterkunft sauber, hygienisch und in gutem Zustand.",
+        "Führen Sie ohne Erlaubnis keine Wartungsarbeiten, Reparaturen oder Veränderungen durch.",
+        "Rauchmelder und andere Sicherheitseinrichtungen dürfen nicht entfernt, abgedeckt oder berührt werden.",
+        "Benutzen Sie Haushaltsgeräte sorgfältig und melden Sie Probleme der Verwaltung.",
+        "Schalten Sie beim Verlassen die Heizung aus, wenn sie nicht benötigt wird, und schließen Sie alle Fenster und Türen.",
+      ],
+    },
+    {
+      title: "Parken und persönliche Gegenstände",
+      items: [
+        "Fahrzeuge dürfen nur auf ausgewiesenen oder erlaubten Flächen abgestellt werden.",
+        "International Expats Houses haftet nicht für Diebstahl, Verlust oder Beschädigung persönlicher Gegenstände.",
+        "Die Unterkunft muss bei der Abreise sauber und ordentlich hinterlassen werden.",
+        "Alle Schlüssel müssen beim Check-out zurückgegeben werden.",
+      ],
+    },
+  ],
+  waste: [
+    { title: "Kunststoff", text: "Nur Kunststoffabfälle" },
+    { title: "Bioabfall", text: "Nur Grün- und Bioabfälle" },
+    { title: "Papier", text: "Papier und Karton" },
+    { title: "Restmüll", text: "Nur Restmüll" },
+  ],
+  fines: [
+    { title: "Rauchen in der Unterkunft", text: "Erster Verstoß: Verwarnung", penalty: "Zweiter Verstoß: 150,00 €" },
+    { title: "Zahlung 7 Tage überfällig", text: "Zusätzliche Gebühr", penalty: "5 % des Mietbetrags" },
+    { title: "Zahlung 14 Tage überfällig", text: "Zusätzliche Gebühr", penalty: "10 % des Mietbetrags" },
+    { title: "Abfall im Außenbereich", text: "Erster Verstoß: Verwarnung", penalty: "Zweiter Verstoß: 150,00 €" },
+    { title: "Zusätzliche Reinigung oder Abfallentsorgung", text: "Wenn zusätzliche Arbeiten erforderlich sind", penalty: "300,00 €" },
+    { title: "Verlorene Schlüssel", text: "Pro fehlendem Schlüssel", penalty: "25,00 €" },
+  ],
+  emergency: [
+    {
+      title: "Bei Gefahr",
+      items: [
+        "Bleiben Sie ruhig und beurteilen Sie die Situation.",
+        "Rufen Sie bei Bedarf sofort die 112 an.",
+        "Nennen Sie Ihren Namen und Ihre Adresse und beschreiben Sie die Gefahr.",
+      ],
+    },
+    {
+      title: "Bei einem Unfall",
+      items: [
+        "Bleiben Sie ruhig und helfen Sie der verletzten Person, wenn dies möglich ist.",
+        "Rufen Sie 0900-8844 oder in lebensbedrohlichen Situationen die 112 an.",
+        "Geben Sie Ihren Standort und die Art der Verletzung an.",
+      ],
+    },
+    {
+      title: "Bei einem Brand",
+      items: [
+        "Bekämpfen Sie nur kleine Brände, wenn dies gefahrlos möglich ist.",
+        "Rufen Sie die 112 an und geben Sie den Brandort an.",
+        "Verlassen Sie das Gebäude sofort und benutzen Sie keinen Aufzug.",
+      ],
+    },
+  ],
+},
 };
 
 // Shared detailed sections for languages where only the short UI text was translated above.
