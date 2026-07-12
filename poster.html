@@ -15,6 +15,7 @@
         --line: #d8e6f5;
         --text: #102033;
         --muted: #5a708a;
+        --shadow: 0 18px 45px rgba(20, 60, 110, 0.09);
       }
       * {
         box-sizing: border-box;
@@ -35,11 +36,12 @@
         margin: 18px auto;
         background: #fff;
         padding: 5mm;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.14);
+        box-shadow: var(--shadow);
         display: flex;
         flex-direction: column;
         gap: 3.2mm;
         overflow: hidden;
+        border-radius: 24px;
       }
       .header {
         text-align: center;
@@ -249,29 +251,6 @@
         font-weight: 800;
         color: var(--blue-dark);
       }
-      @page {
-        size: A4;
-        margin: 0;
-      }
-      @media print {
-        html,
-        body {
-          width: 210mm;
-          height: 297mm;
-          background: #fff;
-        }
-        .sheet {
-          margin: 0;
-          box-shadow: none;
-          width: 210mm;
-          height: 297mm;
-          padding: 5mm;
-          overflow: hidden;
-        }
-        .qr-box {
-          border-style: solid;
-        }
-      }
       .poster-controls {
         position: fixed;
         right: 24px;
@@ -280,7 +259,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 10px;
+        gap: 6px;
       }
       .language-switch {
         display: flex;
@@ -289,7 +268,7 @@
         background: rgba(255, 255, 255, 0.96);
         border: 1px solid var(--line);
         border-radius: 999px;
-        box-shadow: 0 8px 20px rgba(16, 32, 51, 0.12);
+        box-shadow: var(--shadow);
         backdrop-filter: blur(10px);
       }
       .language-btn,
@@ -303,29 +282,45 @@
           color 0.2s ease,
           transform 0.2s ease;
       }
+
       .language-btn {
-        min-width: 48px;
-        padding: 9px 12px;
+        min-width: 38px;
+        height: 38px;
+        padding: 0 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         border-radius: 999px;
         background: transparent;
         color: var(--blue-dark);
+
+        font-size: 13px;
+        line-height: 1;
       }
+
       .language-btn.active {
         background: var(--blue);
         color: #fff;
       }
+
       .print-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
+
         padding: 12px 18px;
+
         background: var(--blue);
         color: white;
+
         border-radius: 999px;
         font-size: 14px;
-        box-shadow: 0 8px 20px rgba(0, 85, 184, 0.22);
+        box-shadow: var(--shadow);
       }
+
       .print-btn:hover,
       .language-btn:hover {
         transform: translateY(-1px);
@@ -369,6 +364,15 @@
         stroke-width: 3;
         stroke-linecap: round;
         stroke-linejoin: round;
+      }
+      @media screen and (min-width: 1200px) {
+        .sheet {
+          transform: scale(1.18);
+          transform-origin: top center;
+        }
+        body {
+          padding-bottom: 220px; /* чтобы можно было прокрутить увеличенный лист */
+        }
       }
       @media screen and (max-width: 900px) {
         body {
@@ -480,23 +484,45 @@
         .poster-controls {
           right: max(12px, env(safe-area-inset-right));
           bottom: max(12px, env(safe-area-inset-bottom));
-          gap: 8px;
+          gap: 6px;
         }
         .language-switch {
           padding: 4px;
         }
         .language-btn {
-          min-width: 44px;
-          padding: 8px 10px;
-          font-size: 13px;
+          min-width: 34px;
+          height: 34px;
+          padding: 0 8px;
+          font-size: 12px;
         }
+
         .print-btn {
           padding: 11px 15px;
           font-size: 13px;
         }
       }
-
+      @page {
+        size: A4;
+        margin: 0;
+      }
       @media print {
+        html,
+        body {
+          width: 210mm;
+          height: 297mm;
+          background: #fff;
+        }
+        .sheet {
+          margin: 0;
+          box-shadow: none;
+          width: 210mm;
+          height: 297mm;
+          padding: 5mm;
+          overflow: hidden;
+        }
+        .qr-box {
+          border-style: solid;
+        }
         .poster-controls {
           display: none !important;
         }
@@ -517,6 +543,9 @@
 
         .snf-mark path {
           stroke: #ffffff !important;
+        }
+        .sheet {
+          border-radius: 0;
         }
       }
     </style>
@@ -709,7 +738,7 @@
       </div>
       <button class="print-btn" type="button" id="printPoster">
         <span aria-hidden="true">🖨</span>
-        <span data-i18n="printButton">Print Poster</span>
+        <span data-i18n="printButton">Print</span>
       </button>
     </div>
     <script>
@@ -749,7 +778,7 @@
           languagesTitle: "Available languages",
           footerText:
             "For questions, problems or urgent housing matters, please contact the company directly.",
-          printButton: "Print Poster",
+          printButton: "Print",
         },
         nl: {
           title: "Huisregels",
@@ -786,7 +815,7 @@
           languagesTitle: "Beschikbare talen",
           footerText:
             "Neem bij vragen, problemen of urgente woonzaken rechtstreeks contact op met het bedrijf.",
-          printButton: "Poster afdrukken",
+          printButton: "Afdrukken",
         },
       };
 
