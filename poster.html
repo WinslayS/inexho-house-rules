@@ -365,6 +365,20 @@
         stroke-linecap: round;
         stroke-linejoin: round;
       }
+
+      .languages span {
+        display: flex;
+        align-items: center; /* вертикальное центрирование */
+        gap: 8px; /* расстояние между флагом и текстом */
+      }
+
+      .flag {
+        width: 22px;
+        height: 16px;
+        object-fit: cover;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
       @media screen and (min-width: 1200px) {
         .sheet {
           transform: scale(1.18);
@@ -700,11 +714,68 @@
             Available languages
           </p>
           <div class="languages">
-            <span>🇬🇧 English</span><span>🇳🇱 Nederlands</span>
-            <span>🇩🇪 Deutsch</span><span>🇵🇱 Polski</span> <span>🇷🇴 Română</span
-            ><span>🇺🇦 Українська</span> <span>🇱🇹 Lietuvių</span
-            ><span>🇸🇰 Slovenčina</span> <span>🇧🇬 Български</span
-            ><span>🇭🇺 Magyar</span>
+            <span
+              ><img
+                src="assets/icons/gb.svg"
+                class="flag"
+                alt=""
+              />English</span
+            >
+            <span
+              ><img
+                src="assets/icons/nl.svg"
+                class="flag"
+                alt=""
+              />Nederlands</span
+            >
+
+            <span
+              ><img
+                src="assets/icons/de.svg"
+                class="flag"
+                alt=""
+              />Deutsch</span
+            >
+            <span
+              ><img src="assets/icons/pl.svg" class="flag" alt="" />Polski</span
+            >
+
+            <span
+              ><img src="assets/icons/ro.svg" class="flag" alt="" />Română</span
+            >
+            <span
+              ><img
+                src="assets/icons/ua.svg"
+                class="flag"
+                alt=""
+              />Українська</span
+            >
+
+            <span
+              ><img
+                src="assets/icons/lt.svg"
+                class="flag"
+                alt=""
+              />Lietuvių</span
+            >
+            <span
+              ><img
+                src="assets/icons/sk.svg"
+                class="flag"
+                alt=""
+              />Slovenčina</span
+            >
+
+            <span
+              ><img
+                src="assets/icons/bg.svg"
+                class="flag"
+                alt=""
+              />Български</span
+            >
+            <span
+              ><img src="assets/icons/hu.svg" class="flag" alt="" />Magyar</span
+            >
           </div>
         </div>
       </section>
