@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="assets/favicon.webp" />
-    <link rel="apple-touch-icon" href="assets/favicon.webp" />
+    <link rel="icon" type="image/webp" href="assets/slogo.webp" />
+    <link rel="apple-touch-icon" href="assets/slogo.webp" />
     <title>Printable House Rules Poster | International Expats Houses</title>
     <style>
       :root {
@@ -53,35 +53,53 @@
         border-radius: 24px;
       }
       .header {
-        text-align: center;
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+        gap: 5mm;
+        align-items: center;
+        text-align: left;
         border-bottom: 1.2px solid var(--line);
         padding-bottom: 3.2mm;
         flex: 0 0 auto;
       }
+      .header-copy {
+        min-width: 0;
+      }
+      .company-name {
+        max-width: 20ch;
+        margin: 0 0 3mm;
+        color: var(--navy);
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+      }
       .logo-frame {
-        width: 76mm;
-        margin: 0 auto 1.6mm;
-        display: grid;
-        place-items: center;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
         overflow: hidden;
       }
       .logo {
+        /* Keep the supplied image intact and account for its transparent padding. */
+        position: absolute;
+        inset: -15%;
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 130%;
+        height: 130%;
         object-fit: contain;
         object-position: center;
       }
       .title {
         margin: 0;
         color: var(--navy);
-        font-size: 25px;
+        font-size: 20px;
         line-height: 1;
         letter-spacing: 0.14em;
         text-transform: uppercase;
       }
       .subtitle {
-        margin: 2.4mm auto 0;
+        margin: 2.4mm 0 0;
         max-width: 155mm;
         color: var(--text-soft);
         font-size: 11.8px;
@@ -94,7 +112,7 @@
         padding: 3mm;
       }
       .snf {
-        margin: 2.5mm auto 0;
+        margin: 2.5mm 0 0;
         display: inline-flex;
         align-items: center;
         gap: 2mm;
@@ -351,7 +369,8 @@
         transform: translateY(-1px);
       }
       .snf {
-        margin: 2.5mm auto 0;
+        max-width: 100%;
+        margin: 2.5mm 0 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -427,8 +446,11 @@
           overflow: visible;
           border-radius: 18px;
         }
+        .company-name {
+          font-size: clamp(18px, 3.5vw, 30px);
+        }
         .title {
-          font-size: clamp(25px, 6vw, 36px);
+          font-size: clamp(16px, 2.5vw, 22px);
         }
         .subtitle {
           max-width: 620px;
@@ -477,6 +499,8 @@
           border-radius: 14px;
         }
         .header {
+          gap: 12px;
+          align-items: start;
           padding-bottom: 14px;
         }
         .subtitle {
@@ -592,25 +616,28 @@
   <body>
     <main class="sheet">
       <header class="header">
+        <div class="header-copy">
+          <p class="company-name">International Expats Houses</p>
+          <h1 class="title" data-i18n="title">House Rules</h1>
+          <p class="subtitle" data-i18n="subtitle">
+            Please follow the main house rules below. Scan the QR code to read the
+            complete rules in your own language.
+          </p>
+          <div class="snf">
+            <span class="snf-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M6 12.5l4 4L18.5 8"></path>
+              </svg>
+            </span>
+            <span data-i18n="snf"> Housing according to SNF standards </span>
+          </div>
+        </div>
         <div class="logo-frame">
           <img
             class="logo"
             src="assets/logoprint.webp"
             alt="International Expats Houses logo"
           />
-        </div>
-        <h1 class="title" data-i18n="title">House Rules</h1>
-        <p class="subtitle" data-i18n="subtitle">
-          Please follow the main house rules below. Scan the QR code to read the
-          complete rules in your own language.
-        </p>
-        <div class="snf">
-          <span class="snf-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="M6 12.5l4 4L18.5 8"></path>
-            </svg>
-          </span>
-          <span data-i18n="snf"> Housing according to SNF standards </span>
         </div>
       </header>
       <section class="rules-grid" aria-label="Main house rules">

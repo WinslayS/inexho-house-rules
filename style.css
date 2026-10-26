@@ -91,7 +91,7 @@ p {
 /* Hero */
 .hero {
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-columns: 264px minmax(0, 1fr);
   gap: 30px;
   align-items: center;
   padding: 30px;
@@ -102,12 +102,24 @@ p {
   box-shadow: var(--shadow);
 }
 
-.logo {
+.brand-logo {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.brand-logo img {
+  /* Account for the source image's transparent padding without cropping the mark. */
+  position: absolute;
+  inset: -15%;
   display: block;
-  width: 100%;
-  max-height: 300px;
+  width: 130%;
+  height: 130%;
   object-fit: contain;
-  border-radius: var(--radius);
+}
+
+.hero-logo {
+  width: 100%;
 }
 
 .hero-copy {
@@ -572,11 +584,9 @@ p {
   margin-bottom: 18px;
 }
 
-.footer-brand img {
-  width: 92px;
-  height: 58px;
-  padding: 6px;
-  object-fit: contain;
+.footer-logo {
+  flex: 0 0 64px;
+  width: 64px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -734,8 +744,8 @@ p {
     min-height: auto;
   }
 
-  .logo {
-    max-width: 230px;
+  .hero-logo {
+    max-width: 260px;
     margin: 0 auto;
   }
 
@@ -813,9 +823,9 @@ p {
     padding: 16px;
   }
 
-  .footer-brand img {
-    width: 78px;
-    height: 52px;
+  .footer-logo {
+    flex-basis: 56px;
+    width: 56px;
   }
   .contact-item:nth-child(2) .contact-icon svg {
     fill: currentColor;
