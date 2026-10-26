@@ -1,20 +1,34 @@
 :root {
-  --brand: #0055b8;
-  --brand-dark: #073b7d;
-  --brand-soft: #eef6ff;
-  --brand-pale: #f7fbff;
-  --text: #102033;
-  --text-soft: #40566f;
-  --muted: #64748b;
-  --bg: #f6f9fc;
-  --card: #ffffff;
-  --line: #dbe7f3;
-  --danger-soft: #fff1f1;
-  --danger-line: #ffd2d2;
+  /* INEXHO corporate palette, shared with the printable poster. */
+  --navy: #003b5c;
+  --cyan: #19c6e8;
+  --ink: #14384c;
+  --muted: #687e89;
+  --paper: #f4f8fa;
+  --line: #dce6eb;
+  --white: #ffffff;
+
+  --text: var(--ink);
+  /* Darkened Muted keeps small supporting text above AA on light surfaces. */
+  --text-soft: #57707d;
+  --bg: var(--paper);
+  --card: var(--white);
+  --accent-soft: #e8f7fc;
+  --surface-hover: #f5fbfc;
+  --border-hover: #b8dce8;
+  --navy-hover: #075675;
+  --focus: #008eac;
+  --surface-floating: rgba(255, 255, 255, 0.96);
+  --danger-soft: #fff4f2;
+  --danger-line: #edc8c3;
   --danger-text: #8f1d14;
-  --shadow: 0 18px 45px rgba(20, 60, 110, 0.09);
-  --shadow-card: 0 10px 25px rgba(20, 60, 110, 0.06);
-  --shadow-hover: 0 22px 55px rgba(0, 85, 184, 0.13);
+  --shadow: 0 18px 45px rgba(0, 59, 92, 0.06);
+  --shadow-card: 0 10px 25px rgba(0, 59, 92, 0.035);
+  --shadow-hover: 0 22px 55px rgba(0, 59, 92, 0.09);
+  --shadow-sticky: 0 10px 30px rgba(0, 59, 92, 0.06);
+  --shadow-button: 0 10px 22px rgba(0, 59, 92, 0.12);
+  --shadow-button-hover: 0 8px 18px rgba(0, 59, 92, 0.06);
+  --shadow-toast: 0 12px 35px rgba(0, 59, 92, 0.18);
   --radius: 24px;
   --radius-card: 22px;
   --transition: 0.18s ease;
@@ -82,7 +96,7 @@ p {
   align-items: center;
   padding: 30px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--card), var(--brand-soft));
+  background: linear-gradient(135deg, var(--card), var(--paper));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -105,7 +119,7 @@ p {
 
 .eyebrow {
   margin: 0 0 6px;
-  color: var(--brand);
+  color: var(--navy);
   font-size: 13px;
   font-weight: 700;
   line-height: 1.3;
@@ -115,7 +129,7 @@ p {
 
 .hero h1 {
   margin: 0;
-  color: var(--brand-dark);
+  color: var(--navy);
   font-size: clamp(36px, 5.5vw, 64px);
   font-weight: 700;
   line-height: 1;
@@ -125,7 +139,7 @@ p {
 .hero p:last-child {
   max-width: 720px;
   margin: 15px 0 0;
-  color: #39536f;
+  color: var(--text-soft);
   font-size: 18px;
   line-height: 1.5;
 }
@@ -141,10 +155,10 @@ p {
   align-items: center;
   margin: 18px 0;
   padding: 16px;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--surface-floating);
   border: 1px solid var(--line);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(20, 60, 110, 0.08);
+  box-shadow: var(--shadow-sticky);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -157,7 +171,7 @@ p {
 
 .small {
   margin: 3px 0 0;
-  color: var(--muted);
+  color: var(--text-soft);
   font-size: 14px;
   line-height: 1.45;
 }
@@ -189,22 +203,27 @@ p {
 }
 
 .lang-btn:hover {
-  background: var(--brand-pale);
-  border-color: rgba(0, 85, 184, 0.38);
-  box-shadow: 0 8px 18px rgba(0, 85, 184, 0.08);
+  background: var(--accent-soft);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-button-hover);
   transform: translateY(-1px);
 }
 
 .lang-btn.active {
   color: var(--card);
-  background: var(--brand);
-  border-color: var(--brand);
-  box-shadow: 0 10px 22px rgba(0, 85, 184, 0.2);
+  background: var(--navy);
+  border-color: var(--navy);
+  box-shadow: inset 0 -3px 0 var(--cyan), var(--shadow-button);
+}
+
+.lang-btn.active:hover {
+  background: var(--navy-hover);
+  border-color: var(--navy-hover);
 }
 
 .lang-btn:focus-visible,
 .contact-item:focus-visible {
-  outline: 3px solid rgba(0, 85, 184, 0.22);
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -229,7 +248,7 @@ p {
 
 .notice h2,
 .section h2 {
-  color: var(--brand-dark);
+  color: var(--navy);
   font-size: 24px;
   font-weight: 700;
   line-height: 1.25;
@@ -263,11 +282,11 @@ p {
   place-items: center;
   align-self: center;
   justify-self: center;
-  color: var(--card);
+  color: var(--navy);
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
-  background: var(--brand);
+  background: var(--cyan);
   border-radius: 50%;
 }
 
@@ -307,6 +326,7 @@ p {
 .fine-card h3,
 .emergency-card h3 {
   margin: 0 0 6px;
+  color: var(--navy);
   font-size: 17px;
   font-weight: 700;
   line-height: 1.28;
@@ -318,7 +338,7 @@ p {
 .emergency-card p,
 .group-card li,
 .emergency-card li {
-  color: var(--muted);
+  color: var(--text-soft);
   font-size: 14.5px;
   font-weight: 400;
   line-height: 1.48;
@@ -374,7 +394,7 @@ p {
 
 .group-card h3 {
   margin-bottom: 9px;
-  color: var(--brand);
+  color: var(--navy);
 }
 
 .group-card ul,
@@ -465,7 +485,7 @@ p {
   grid-column: 1 / -1;
   grid-row: 3;
   margin-top: 4px;
-  color: var(--brand-dark);
+  color: var(--danger-text);
   font-size: 15.5px;
   font-weight: 600;
   line-height: 1.4;
@@ -478,8 +498,9 @@ p {
   gap: 16px;
   margin-bottom: 16px;
   padding: 18px;
-  color: var(--card);
-  background: var(--brand-dark);
+  color: var(--danger-text);
+  background: var(--danger-soft);
+  box-shadow: inset 0 0 0 1px var(--danger-line);
   border-radius: 20px;
 }
 
@@ -538,7 +559,7 @@ p {
   padding: 24px;
   color: var(--text);
   text-align: left;
-  background: linear-gradient(135deg, var(--card), var(--brand-soft));
+  background: linear-gradient(135deg, var(--card), var(--paper));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -563,7 +584,7 @@ p {
 
 .footer-brand strong {
   display: block;
-  color: var(--brand-dark);
+  color: var(--navy);
   font-size: 20px;
   font-weight: 600;
   line-height: 1.3;
@@ -612,8 +633,8 @@ p {
   grid-row: 1 / 3;
   place-items: center;
 
-  color: var(--card);
-  background: var(--brand);
+  color: var(--navy);
+  background: var(--accent-soft);
   border-radius: 14px;
 }
 
@@ -631,7 +652,7 @@ p {
   grid-column: 2;
   grid-row: 1;
   align-self: start;
-  color: var(--muted);
+  color: var(--text-soft);
   font-size: 11px;
   font-weight: 600;
   line-height: 1.2;
@@ -645,7 +666,7 @@ p {
   grid-row: 2;
   align-self: start;
   margin: 0;
-  color: var(--brand-dark);
+  color: var(--navy);
   font-size: 15px;
   font-weight: 600;
   line-height: 1.4;
@@ -667,9 +688,9 @@ p {
   font-size: 14px;
   font-weight: 600;
   pointer-events: none;
-  background: var(--brand-dark);
+  background: var(--navy);
   border-radius: 999px;
-  box-shadow: 0 12px 35px rgba(7, 59, 125, 0.28);
+  box-shadow: var(--shadow-toast);
   opacity: 0;
   transform: translate(-50%, 14px);
   transition:
@@ -690,8 +711,8 @@ p {
   .emergency-card:hover,
   .notice:hover,
   .contact-item:hover {
-    background: var(--brand-pale);
-    border-color: rgba(0, 85, 184, 0.26);
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
     box-shadow: var(--shadow-hover);
     transform: translateY(-1px);
   }
@@ -950,7 +971,7 @@ p {
     align-items: start !important;
     padding: 14px !important;
     background: var(--card) !important;
-    border: 1px solid #d8e6f5 !important;
+    border: 1px solid var(--line) !important;
     border-radius: 14px !important;
     box-shadow: none !important;
   }
