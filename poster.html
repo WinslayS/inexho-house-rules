@@ -8,17 +8,13 @@
     <title>Printable House Rules Poster | International Expats Houses</title>
     <style>
       :root {
-        /* INEXHO corporate palette, shared with the full House Rules website. */
         --navy: #003b5c;
         --cyan: #19c6e8;
-        --ink: #14384c;
-        --muted: #687e89;
-        --paper: #f4f8fa;
-        --line: #dce6eb;
+        --ink: #12364a;
+        --page-bg: #e6edf1;
+        --line: #dde4e8;
         --white: #ffffff;
 
-        --text: var(--ink);
-        /* Darkened Muted for readable small translations and contact labels. */
         --text-soft: #57707d;
         --accent-soft: #e8f7fc;
         --navy-hover: #075675;
@@ -35,175 +31,122 @@
         padding: 0;
       }
       body {
-        background: var(--paper);
+        background: var(--page-bg);
         font-family: Arial, Helvetica, sans-serif;
-        color: var(--text);
+        color: var(--ink);
       }
       .sheet {
         width: 210mm;
-        height: 297mm;
+        min-height: 297mm;
         margin: 18px auto;
-        background: var(--white);
-        padding: 5mm;
+        /* Each pair of identical stops gives the corner cut a straight edge. */
+        background:
+          linear-gradient(to bottom left, rgb(25 198 232 / 7%) 50%, transparent 50%) top right / 32% 16% no-repeat,
+          linear-gradient(to bottom left, rgb(25 198 232 / 5%) 50%, transparent 50%) top right / 64% 25% no-repeat,
+          linear-gradient(to top right, rgb(0 59 92 / 4%) 50%, transparent 50%) bottom left / 57% 21% no-repeat,
+          var(--white);
+        padding: 7mm 5mm;
         box-shadow: var(--shadow);
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
-        gap: 3.2mm;
-        overflow: hidden;
-        border-radius: 24px;
+        gap: 4mm;
       }
-      .header {
+      .header,
+      .qr-section {
         display: grid;
-        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
-        gap: 5mm;
+        grid-template-columns: 80mm minmax(0, 1fr);
+        column-gap: 10mm;
         align-items: center;
-        text-align: left;
-        border-bottom: 1.2px solid var(--line);
-        padding-bottom: 3.2mm;
-        flex: 0 0 auto;
       }
-      .header-copy {
-        min-width: 0;
-      }
-      .company-name {
-        max-width: 20ch;
-        margin: 0 0 3mm;
-        color: var(--navy);
-        font-size: 30px;
-        font-weight: 800;
-        line-height: 1.08;
-        letter-spacing: -0.025em;
+      .logo-frame,
+      .qr-box {
+        width: 100%;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        display: grid;
+        place-items: center;
       }
       .logo-frame {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1;
-        overflow: hidden;
+        height: 46mm;
       }
       .logo {
-        /* Keep the supplied image intact and account for its transparent padding. */
-        position: absolute;
-        inset: -15%;
+        /* The square asset includes its own clear space around the mark. */
         display: block;
-        width: 130%;
-        height: 130%;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
         object-fit: contain;
-        object-position: center;
+      }
+      .company-name {
+        margin: 0 0 2mm;
+        color: var(--navy);
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.25;
       }
       .title {
         margin: 0;
         color: var(--navy);
-        font-size: 20px;
-        line-height: 1;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.025em;
       }
       .subtitle {
-        margin: 2.4mm 0 0;
-        max-width: 155mm;
+        margin: 3mm 0 0;
         color: var(--text-soft);
-        font-size: 11.8px;
-        line-height: 1.35;
-      }
-      .qr-image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        padding: 3mm;
-      }
-      .snf {
-        margin: 2.5mm 0 0;
-        display: inline-flex;
-        align-items: center;
-        gap: 2mm;
-        padding: 1.8mm 5.5mm;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--navy);
-        border: 1px solid var(--line);
-        font-weight: 800;
-        font-size: 12.8px;
-        line-height: 1;
-      }
-      .snf-mark {
-        display: inline-grid;
-        place-items: center;
-        width: 6mm;
-        height: 6mm;
-        border-radius: 50%;
-        background: var(--cyan);
-        color: var(--navy);
-        font-size: 10.8px;
+        font-size: 14px;
+        line-height: 1.45;
       }
       .rules-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: minmax(35mm, auto);
         gap: 3.6mm;
-        grid-template-rows: repeat(3, 30mm);
-        flex: 0 0 auto;
       }
       .rule-card {
         display: grid;
-        grid-template-columns: 42px 1fr;
-        column-gap: 16px;
+        grid-template-columns: 38px minmax(0, 1fr);
+        column-gap: 12px;
         align-items: center;
-        padding: 18px 22px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
+        padding: 3mm 4mm;
         background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 9px;
       }
       .icon {
-        width: 42px;
-        height: 42px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 34px;
+        text-align: center;
+        font-size: 32px;
         line-height: 1;
-        transform: translateY(-10px);
       }
       .rule-text {
         display: flex;
         flex-direction: column;
-        margin: 0;
-        gap: 4px;
+        gap: 3px;
       }
       .rule-main {
-        font-size: 16px;
+        margin-bottom: 2px;
         color: var(--navy);
-        font-weight: 900;
-        line-height: 1.15;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.16;
       }
       .rule-translation {
-        font-size: 10px;
+        font-size: 12px;
         color: var(--text-soft);
-        line-height: 1.24;
-      }
-      .qr-section {
-        border-top: none;
-        border-bottom: 1.2px solid var(--line);
-        padding: 2.8mm 0 3.5mm;
-        display: grid;
-        grid-template-columns: 80mm 1fr;
-        gap: 10mm;
-        align-items: center;
-        background: transparent;
-        flex: 0 0 auto;
+        line-height: 1.25;
       }
       .qr-box {
-        width: 80mm;
-        height: 80mm;
-        border: 1.4px dashed var(--line);
-        border-radius: 8px;
-        background: var(--white);
-        display: grid;
-        place-items: center;
-        text-align: center;
-        color: var(--text-soft);
-        font-weight: 900;
-        font-size: 16.5px;
-        line-height: 1.25;
-        letter-spacing: 0.03em;
+        aspect-ratio: 1;
+      }
+      .qr-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 3mm;
+        object-fit: contain;
       }
       .scan-title {
         margin: 0;
@@ -232,51 +175,69 @@
         gap: 2mm 11mm;
         font-size: 12px;
         font-weight: 800;
-        color: var(--text);
+        color: var(--ink);
         max-width: 92mm;
       }
       .footer {
-        padding-top: 3.2mm;
+        margin-top: auto;
+        border-top: 1px solid var(--line);
+        padding-top: 3mm;
         text-align: center;
         color: var(--text-soft);
-        flex: 0 0 auto;
-      }
-      .footer-brand {
-        margin-bottom: 1.8mm;
       }
       .footer-brand strong {
         display: block;
         color: var(--navy);
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 600;
         line-height: 1.2;
-        margin-bottom: 0.8mm;
       }
       .footer-brand span {
-        font-size: 9.8px;
-        line-height: 1.25;
+        display: block;
+        margin-top: 1mm;
+        font-size: 11px;
+        line-height: 1.35;
       }
       .contact-list {
-        display: flex;
-        justify-content: center;
-        gap: 5mm;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 3mm;
       }
       .contact-item {
-        font-size: 10.8px;
-        line-height: 1.2;
+        padding-inline: 2mm;
+      }
+      .contact-item + .contact-item {
+        border-inline-start: 1px solid var(--line);
       }
       .contact-label {
-        display: block;
-        color: var(--text-soft);
-        font-size: 8.2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.3;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-weight: 800;
-        margin-bottom: 0.3mm;
+        letter-spacing: 0.06em;
+      }
+      .contact-label svg {
+        width: 14px;
+        height: 14px;
+        flex: none;
+        color: var(--navy);
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
       .contact-value {
-        font-weight: 800;
+        display: block;
+        margin-top: 1mm;
         color: var(--navy);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.35;
       }
       .poster-controls {
         position: fixed;
@@ -368,48 +329,6 @@
       .language-btn:hover {
         transform: translateY(-1px);
       }
-      .snf {
-        max-width: 100%;
-        margin: 2.5mm 0 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2mm;
-        padding: 1.8mm 5.5mm;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--navy);
-        font-size: 12.8px;
-        font-weight: 800;
-        line-height: 1.15;
-      }
-
-      .snf-mark {
-        width: 6mm;
-        height: 6mm;
-        flex: 0 0 6mm;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--cyan);
-      }
-
-      .snf-mark svg {
-        display: block;
-        width: 4mm;
-        height: 4mm;
-        overflow: visible;
-      }
-
-      .snf-mark path {
-        fill: none;
-        stroke: var(--navy);
-        stroke-width: 3;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
       .languages span {
         display: flex;
         align-items: center; /* вертикальное центрирование */
@@ -438,51 +357,19 @@
         }
         .sheet {
           width: min(100%, 720px);
-          height: auto;
           min-height: 0;
           margin: 0 auto;
           padding: 18px;
           gap: 18px;
-          overflow: visible;
-          border-radius: 18px;
         }
-        .company-name {
-          font-size: clamp(18px, 3.5vw, 30px);
-        }
-        .title {
-          font-size: clamp(16px, 2.5vw, 22px);
-        }
-        .subtitle {
-          max-width: 620px;
-          font-size: 15px;
+        .header,
+        .qr-section {
+          grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+          column-gap: 24px;
         }
         .rules-grid {
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: none;
+          grid-auto-rows: auto;
           gap: 12px;
-        }
-        .rule-card {
-          min-height: 145px;
-          padding: 18px;
-          border-radius: 16px;
-        }
-        .icon {
-          transform: none;
-        }
-        .rule-main {
-          font-size: 17px;
-        }
-        .rule-translation {
-          font-size: 12px;
-        }
-        .qr-section {
-          grid-template-columns: minmax(220px, 42%) 1fr;
-          gap: 24px;
-        }
-        .qr-box {
-          width: 100%;
-          height: auto;
-          aspect-ratio: 1;
         }
         .languages {
           max-width: none;
@@ -498,31 +385,25 @@
           gap: 14px;
           border-radius: 14px;
         }
-        .header {
-          gap: 12px;
-          align-items: start;
-          padding-bottom: 14px;
+        .header,
+        .qr-section {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 16px;
         }
-        .subtitle {
-          font-size: 14px;
+        .header-copy {
+          text-align: center;
         }
-        .snf {
-          font-size: 12px;
-          line-height: 1.25;
-          border-radius: 14px;
+        .logo-frame {
+          height: 112px;
+        }
+        .title {
+          font-size: 32px;
         }
         .rules-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: minmax(0, 1fr);
         }
         .rule-card {
-          min-height: 0;
-          grid-template-columns: 44px 1fr;
-          column-gap: 14px;
-          padding: 16px;
-        }
-        .qr-section {
-          grid-template-columns: 1fr;
-          gap: 18px;
+          padding: 14px;
         }
         .qr-box {
           width: min(100%, 320px);
@@ -532,17 +413,18 @@
           font-size: 23px;
         }
         .scan-text {
-          font-size: 15px;
           max-width: none;
         }
         .languages {
-          grid-template-columns: 1fr 1fr;
           gap: 10px 14px;
           font-size: 13px;
         }
         .contact-list {
-          flex-direction: column;
-          gap: 10px;
+          grid-template-columns: 1fr;
+          row-gap: 12px;
+        }
+        .contact-item + .contact-item {
+          border: 0;
         }
         .poster-controls {
           right: max(12px, env(safe-area-inset-right));
@@ -569,46 +451,16 @@
         margin: 0;
       }
       @media print {
-        html,
         body {
-          width: 210mm;
-          height: 297mm;
           background: var(--white);
         }
         .sheet {
           margin: 0;
           box-shadow: none;
-          width: 210mm;
-          height: 297mm;
-          padding: 5mm;
-          overflow: hidden;
-        }
-        .qr-box {
-          border-style: solid;
+          border-radius: 0;
         }
         .poster-controls {
-          display: none !important;
-        }
-        body {
-          padding: 0 !important;
-        }
-        .snf,
-        .snf-mark,
-        .snf-mark svg,
-        .snf-mark path {
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
-
-        .snf-mark {
-          background: var(--cyan) !important;
-        }
-
-        .snf-mark path {
-          stroke: var(--navy) !important;
-        }
-        .sheet {
-          border-radius: 0;
+          display: none;
         }
       }
     </style>
@@ -616,6 +468,13 @@
   <body>
     <main class="sheet">
       <header class="header">
+        <div class="logo-frame">
+          <img
+            class="logo"
+            src="assets/logoprint.webp"
+            alt="International Expats Houses logo"
+          />
+        </div>
         <div class="header-copy">
           <p class="company-name">International Expats Houses</p>
           <h1 class="title" data-i18n="title">House Rules</h1>
@@ -623,21 +482,6 @@
             Please follow the main house rules below. Scan the QR code to read the
             complete rules in your own language.
           </p>
-          <div class="snf">
-            <span class="snf-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M6 12.5l4 4L18.5 8"></path>
-              </svg>
-            </span>
-            <span data-i18n="snf"> Housing according to SNF standards </span>
-          </div>
-        </div>
-        <div class="logo-frame">
-          <img
-            class="logo"
-            src="assets/logoprint.webp"
-            alt="International Expats Houses logo"
-          />
         </div>
       </header>
       <section class="rules-grid" aria-label="Main house rules">
@@ -842,16 +686,37 @@
         </div>
         <div class="contact-list">
           <div class="contact-item">
-            <span class="contact-label">Email</span
-            ><span class="contact-value">info@inexho.com</span>
+            <span class="contact-label">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M4 6.5h16v11H4z"></path>
+                <path d="m4.5 7 7.5 6 7.5-6"></path>
+              </svg>
+              <span data-i18n="emailLabel">Email</span>
+            </span>
+            <span class="contact-value">info@inexho.com</span>
           </div>
           <div class="contact-item">
-            <span class="contact-label">Phone</span
-            ><span class="contact-value">+31 6 1539 7067</span>
+            <span class="contact-label">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M7.2 4.5 9.5 8l-1.8 1.8a14.5 14.5 0 0 0 6.5 6.5l1.8-1.8 3.5 2.3c.5.3.7.9.5 1.4-.5 1.2-1.7 2-3 2C10 20.2 3.8 14 3.8 6.9c0-1.3.8-2.5 2-3 .5-.2 1.1 0 1.4.6Z"
+                ></path>
+              </svg>
+              <span data-i18n="phoneLabel">Phone</span>
+            </span>
+            <span class="contact-value">+31 6 1539 7067</span>
           </div>
           <div class="contact-item">
-            <span class="contact-label">Address</span
-            ><span class="contact-value">Diamantweg 68, 1812 RC Alkmaar</span>
+            <span class="contact-label">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"
+                ></path>
+                <circle cx="12" cy="10" r="2.2"></circle>
+              </svg>
+              <span data-i18n="addressLabel">Office address</span>
+            </span>
+            <span class="contact-value">Diamantweg 68<br />1812 RC Alkmaar</span>
           </div>
         </div>
       </footer>
@@ -875,7 +740,6 @@
           title: "House Rules",
           subtitle:
             "Please follow the main house rules below. Scan the QR code to read the complete rules in your own language.",
-          snf: "Housing according to SNF standards",
           smokingMain: "No smoking inside",
           smoking_pl: "PL: Zakaz palenia w środku",
           smoking_ro: "RO: Fumatul în interior este interzis",
@@ -906,13 +770,15 @@
           languagesTitle: "Available languages",
           footerText:
             "For questions, problems or urgent housing matters, please contact the company directly.",
+          emailLabel: "Email",
+          phoneLabel: "Phone",
+          addressLabel: "Office address",
           printButton: "Print",
         },
         nl: {
           title: "Huisregels",
           subtitle:
             "Volg de belangrijkste huisregels hieronder. Scan de QR-code om de volledige regels in uw eigen taal te lezen.",
-          snf: "Huisvesting volgens de SNF-normen",
           smokingMain: "Binnen roken is verboden",
           smoking_pl: "PL: Zakaz palenia w środku",
           smoking_ro: "RO: Fumatul în interior este interzis",
@@ -943,6 +809,9 @@
           languagesTitle: "Beschikbare talen",
           footerText:
             "Neem bij vragen, problemen of urgente woonzaken rechtstreeks contact op met het bedrijf.",
+          emailLabel: "E-mail",
+          phoneLabel: "Telefoon",
+          addressLabel: "Kantooradres",
           printButton: "Afdrukken",
         },
       };
