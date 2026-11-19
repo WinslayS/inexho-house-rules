@@ -36,21 +36,45 @@
         color: var(--ink);
       }
       .sheet {
+        position: relative;
+        isolation: isolate;
         width: 210mm;
-        min-height: 297mm;
+        height: 297mm;
         margin: 18px auto;
-        /* Each pair of identical stops gives the corner cut a straight edge. */
-        background:
-          linear-gradient(to bottom left, rgb(25 198 232 / 7%) 50%, transparent 50%) top right / 32% 16% no-repeat,
-          linear-gradient(to bottom left, rgb(25 198 232 / 5%) 50%, transparent 50%) top right / 64% 25% no-repeat,
-          linear-gradient(to top right, rgb(0 59 92 / 4%) 50%, transparent 50%) bottom left / 57% 21% no-repeat,
-          var(--white);
+        background: var(--white);
         padding: 7mm 5mm;
         box-shadow: var(--shadow);
-        border-radius: 10px;
+        border-radius: 24px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 4mm;
+      }
+      .sheet::before,
+      .sheet::after,
+      .corner-accent {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        pointer-events: none;
+      }
+      .sheet::before {
+        content: "";
+        background: var(--cyan);
+        opacity: 0.055;
+        clip-path: polygon(68% 0%, 100% 0%, 100% 54%);
+      }
+      .corner-accent {
+        background: var(--cyan);
+        opacity: 0.09;
+        clip-path: polygon(87% 0%, 100% 0%, 100% 30%);
+      }
+      .sheet::after {
+        content: "";
+        background: var(--navy);
+        opacity: 0.035;
+        clip-path: polygon(0% 58%, 18% 100%, 0% 100%);
       }
       .header,
       .qr-section {
@@ -58,26 +82,32 @@
         grid-template-columns: 80mm minmax(0, 1fr);
         column-gap: 10mm;
         align-items: center;
+        border-bottom: 1.2px solid var(--line);
+      }
+      .header {
+        padding-bottom: 3.2mm;
+      }
+      .qr-section {
+        padding: 2.8mm 0 3.5mm;
       }
       .logo-frame,
       .qr-box {
         width: 100%;
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 9px;
         display: grid;
         place-items: center;
       }
       .logo-frame {
-        height: 46mm;
+        height: 44mm;
       }
       .logo {
         /* The square asset includes its own clear space around the mark. */
         display: block;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
         height: 100%;
         min-height: 0;
         object-fit: contain;
+        transform: scale(1.16);
       }
       .company-name {
         margin: 0 0 2mm;
@@ -89,7 +119,7 @@
       .title {
         margin: 0;
         color: var(--navy);
-        font-size: 36px;
+        font-size: 34px;
         font-weight: 700;
         line-height: 1.05;
         letter-spacing: -0.025em;
@@ -103,7 +133,7 @@
       .rules-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: minmax(35mm, auto);
+        grid-auto-rows: 30mm;
         gap: 3.6mm;
       }
       .rule-card {
@@ -111,10 +141,10 @@
         grid-template-columns: 38px minmax(0, 1fr);
         column-gap: 12px;
         align-items: center;
-        padding: 3mm 4mm;
+        padding: 2mm 4mm;
         background: var(--white);
         border: 1px solid var(--line);
-        border-radius: 9px;
+        border-radius: 18px;
       }
       .icon {
         text-align: center;
@@ -140,6 +170,7 @@
       }
       .qr-box {
         aspect-ratio: 1;
+        background: var(--white);
       }
       .qr-image {
         display: block;
@@ -179,9 +210,6 @@
         max-width: 92mm;
       }
       .footer {
-        margin-top: auto;
-        border-top: 1px solid var(--line);
-        padding-top: 3mm;
         text-align: center;
         color: var(--text-soft);
       }
@@ -200,14 +228,10 @@
       }
       .contact-list {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        column-gap: 8mm;
         margin-top: 3mm;
-      }
-      .contact-item {
-        padding-inline: 2mm;
-      }
-      .contact-item + .contact-item {
-        border-inline-start: 1px solid var(--line);
       }
       .contact-label {
         display: flex;
@@ -233,6 +257,7 @@
       }
       .contact-value {
         display: block;
+        white-space: nowrap;
         margin-top: 1mm;
         color: var(--navy);
         font-size: 12px;
@@ -342,25 +367,17 @@
         border-radius: 4px;
         flex-shrink: 0;
       }
-      @media screen and (min-width: 1200px) {
-        .sheet {
-          transform: scale(1.18);
-          transform-origin: top center;
-        }
-        body {
-          padding-bottom: 220px; /* чтобы можно было прокрутить увеличенный лист */
-        }
-      }
       @media screen and (max-width: 900px) {
         body {
           padding: 14px 14px 96px;
         }
         .sheet {
           width: min(100%, 720px);
-          min-height: 0;
+          height: auto;
           margin: 0 auto;
           padding: 18px;
           gap: 18px;
+          border-radius: 18px;
         }
         .header,
         .qr-section {
@@ -423,9 +440,6 @@
           grid-template-columns: 1fr;
           row-gap: 12px;
         }
-        .contact-item + .contact-item {
-          border: 0;
-        }
         .poster-controls {
           right: max(12px, env(safe-area-inset-right));
           bottom: max(12px, env(safe-area-inset-bottom));
@@ -467,6 +481,7 @@
   </head>
   <body>
     <main class="sheet">
+      <span class="corner-accent" aria-hidden="true"></span>
       <header class="header">
         <div class="logo-frame">
           <img
@@ -716,7 +731,7 @@
               </svg>
               <span data-i18n="addressLabel">Office address</span>
             </span>
-            <span class="contact-value">Diamantweg 68<br />1812 RC Alkmaar</span>
+            <span class="contact-value">Diamantweg 68, 1812 RC Alkmaar</span>
           </div>
         </div>
       </footer>
