@@ -138,18 +138,18 @@
       }
       .rule-card {
         display: grid;
-        grid-template-columns: 38px minmax(0, 1fr);
-        column-gap: 12px;
+        grid-template-columns: 48px minmax(0, 1fr);
+        column-gap: 16px;
         align-items: center;
         padding: 2mm 4mm;
         background: var(--white);
         border: 1px solid var(--line);
         border-radius: 18px;
       }
-      .icon {
-        text-align: center;
-        font-size: 32px;
-        line-height: 1;
+      .icon svg {
+        display: block;
+        width: 100%;
+        height: auto;
       }
       .rule-text {
         display: flex;
@@ -389,6 +389,12 @@
           grid-auto-rows: auto;
           gap: 12px;
         }
+        .rule-card {
+          grid-template-columns: 44px minmax(0, 1fr);
+          column-gap: 14px;
+          /* Keep the original text width as the cards reflow. */
+          padding-inline: calc(4mm - 4px);
+        }
         .languages {
           max-width: none;
         }
@@ -421,7 +427,7 @@
           grid-template-columns: minmax(0, 1fr);
         }
         .rule-card {
-          padding: 14px;
+          padding: 14px 10px;
         }
         .qr-box {
           width: min(100%, 320px);
@@ -502,7 +508,11 @@
       </header>
       <section class="rules-grid" aria-label="Main house rules">
         <div class="rule-card">
-          <span class="icon">🚭</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="no-smoking"><rect width="80" height="80" rx="26" fill="#FDE9EE"/>
+              <g transform="translate(40 40) scale(0.706068789) translate(-40.000000 -40.333333)"><g transform="scale(0.141346727143) translate(-21 -15)"><g fill="none" stroke="#D73B40" stroke-linecap="round" stroke-linejoin="round" stroke-width="37.0739579"><rect x="105.500" y="278.000" width="365.000" height="78.500" rx="22.000"/><path d="M201.500 278.000V356.500"/><path d="M376.000 105.500C312.500 164.000 439.000 177.500 366.500 234.000M444.000 105.500C380.500 164.000 507.000 177.500 434.500 234.000" transform="translate(0 -10)"/><circle cx="411.000" cy="413.500" r="91.500" fill="#FDE9EE"/><path d="M346.300 348.800L475.700 478.200"/></g></g>
+            </g></svg>
+          </span>
           <div class="rule-text">
             <span class="rule-main" data-i18n="smokingMain"
               >No smoking inside</span
@@ -520,7 +530,13 @@
         </div>
 
         <div class="rule-card">
-          <span class="icon">🔇</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Quiet hours">
+              <title>Quiet hours</title>
+              <rect width="80" height="80" rx="26" fill="#E4F8FD"/>
+              <g fill="none" stroke="#006D95" stroke-width="3.650" stroke-linecap="round" stroke-linejoin="round"><path d="M36.150 25.300L28.550 32.700H23.250Q20.900 32.550 21.000 35.100V43.850Q20.600 48.200 23.700 47.650H28.550L35.900 55.000Q37.600 55.700 37.900 54.000V26.150Q37.150 24.400 36.200 25.300Z"/><path d="M47.250 34.550L58.500 45.850M58.450 34.550L47.250 45.850"/></g>
+            </svg>
+          </span>
           <div class="rule-text">
             <span class="rule-main" data-i18n="quietMain"
               >Quiet hours 22:00–07:00</span
@@ -538,7 +554,11 @@
         </div>
 
         <div class="rule-card">
-          <span class="icon">🚫</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="no-drugs-or-weapons"><rect width="80" height="80" rx="26" fill="#FDE9EE"/>
+              <g transform="translate(40 40) scale(0.764769068) translate(-39.541667 -43.083333)"><g transform="scale(0.141346727143) translate(-623 -15)"><g fill="none" stroke="#D73B40" stroke-linecap="round" stroke-linejoin="round" stroke-width="34.2283255"><path d="M765.500 138.000H1028.500Q1057.000 138.000 1057.000 166.500V189.000Q1057.000 217.500 1028.500 217.500H842.000Q837.500 217.500 833.500 236.000L796.500 345.000Q791.500 358.000 776.500 358.000H738.500Q708.000 358.000 716.000 330.000L760.000 226.500Q764.000 217.500 754.000 211.500L740.000 200.500Q732.000 194.500 732.000 181.500V164.000Q732.000 138.000 765.500 138.000Z"/><path d="M924.500 217.500L913.500 256.500Q906.500 281.500 880.000 281.500H816.500"/><g transform="translate(-19 8) rotate(-26.000 801.500 439.000)"><rect x="726.750" y="407.000" width="149.500" height="64.000" rx="32.000"/><path d="M801.500 407.000V471.000"/></g><circle cx="997.000" cy="405.800" r="96.000"/><path d="M929.118 337.918L1064.882 473.682"/></g></g>
+            </g></svg>
+          </span>
           <div class="rule-text">
             <span class="rule-main" data-i18n="drugsMain"
               >No drugs or weapons</span
@@ -556,7 +576,13 @@
         </div>
 
         <div class="rule-card">
-          <span class="icon">🧹</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Keep clean">
+              <title>Keep clean</title>
+              <rect width="80" height="80" rx="26" fill="#FEF5E5"/>
+              <g fill="none" stroke="#C3832F" stroke-width="3.800" stroke-linecap="round" stroke-linejoin="round"><path d="M32.950 32.800L35.950 30.000Q39.150 27.900 42.300 30.900L42.800 31.700L49.200 25.000Q52.800 22.800 55.000 25.550Q56.600 27.550 55.100 30.200L48.600 36.800L49.050 38.100Q52.150 40.150 49.400 44.800L46.300 46.050Z"/><path d="M33.450 32.650C30.350 35.200 27.300 36.150 24.850 37.700Q21.750 39.850 24.100 44.050Q24.950 46.500 30.400 43.950L27.450 48.100Q27.700 49.050 29.650 51.400L34.700 55.000Q39.650 58.700 42.250 54.950L47.150 46.150"/></g>
+            </svg>
+          </span>
           <div class="rule-text">
             <span class="rule-main" data-i18n="cleanMain"
               >Keep the house clean</span
@@ -574,7 +600,13 @@
         </div>
 
         <div class="rule-card">
-          <span class="icon">🗑️</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Sort waste">
+              <title>Sort waste</title>
+              <rect width="80" height="80" rx="26" fill="#F0F0F0"/>
+              <g fill="none" stroke="#57707D" stroke-width="3.850" stroke-linecap="round" stroke-linejoin="round"><path d="M25.050 30.450H54.750M32.950 30.200V27.550Q33.800 23.400 37.350 23.250H42.150Q46.350 23.400 46.500 27.900V30.200M26.800 30.350L29.200 53.450Q29.600 56.800 33.550 56.900H45.800Q50.300 56.800 50.400 53.350L52.800 31.300M36.050 38.250V47.250M43.550 38.250V47.250"/></g>
+            </svg>
+          </span>
           <div class="rule-text">
             <span class="rule-main" data-i18n="wasteMain"
               >Sort your waste correctly</span
@@ -592,7 +624,13 @@
         </div>
 
         <div class="rule-card">
-          <span class="icon">☎️</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Emergency 112">
+              <title>Emergency 112</title>
+              <rect width="80" height="80" rx="26" fill="#E5F6EE"/>
+              <g fill="none" stroke="#009F6C" stroke-width="3.650" stroke-linecap="round" stroke-linejoin="round"><path d="M27.500 23.200H33.350L36.950 31.500L33.550 35.300Q36.600 42.800 44.400 46.600L48.300 42.950L56.500 46.200V52.350Q55.650 57.300 50.750 56.800C34.900 56.300 22.700 42.750 23.000 28.050Q23.050 23.900 27.800 23.200Z"/></g>
+            </svg>
+          </span>
           <div class="rule-text">
             <span class="rule-main" data-i18n="emergencyMain"
               >Emergency: call 112</span
